@@ -7,3 +7,7 @@ from drivers.models import Driver
 class DriverViewSet(viewsets.ModelViewSet):
     queryset = Driver.objects.all()
     serializer_class = DriverSerializer
+    
+def index(request):
+    context = {}
+    return render(request,"drivers/index.html",context)

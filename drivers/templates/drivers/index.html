@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html ng-app="autoclubApp">
+    <head>
+        <meta charset="utf-8"></meta>
+        <title> Driver's db </title>
+        <link rel="stylesheet" href="{% static "styles/dist/css/bootstrap.min.css" %}">
+        <script src="{% static "scripts/angular.min.js" %}"></script>
+        <script src="{% static "scripts/angular-route.min.js" %}"></script>
+        <script src="{% static "scripts/app.js" %}"></script>
+    </head>
+    <body>
+        <div ng-view>
+        </div>
+    </body>
+</html>
