@@ -4,8 +4,5 @@ autoclubApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/home', {
         templateUrl: 'static/views/home.html',
         controller: 'driverListController'
-    }).
-    otherwise({
-        redirectTo: '/home'
     });
 }]);
