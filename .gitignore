@@ -5,6 +5,7 @@ __pycache__/
 #Db files
 *.sqlite3
 
+bower_components/
 
 # C extensions
 *.so
