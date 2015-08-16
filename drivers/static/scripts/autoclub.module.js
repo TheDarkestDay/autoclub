@@ -1,10 +1,12 @@
 (function() {
     'use strict';
     
-    angular.module('autoclubApp', ['ngRoute', 'autoclubCtrls']);
+    angular.module('autoclubApp', ['autoclubControllers', 'autoclubRoutes']);
     
     angular.module('autoclubServices',[]);
     
-    angular.module('autoclubCtrls', ['autoclubServices']);
+    angular.module('autoclubRoutes',['ngRoute']);
+    
+    angular.module('autoclubControllers', ['autoclubServices']);
     
 })();

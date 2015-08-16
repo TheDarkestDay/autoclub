@@ -7,9 +7,9 @@
     
     function driverListController($scope, Drivers) {
         
-        var self = this;
+        var vm = this;
         
-        self.items = [];
+        vm.items = [];
         
         run();
         
@@ -17,7 +17,7 @@
             Drivers.all().then(resolve,reject);
             
             function resolve(data, status, header, config) {
-                self.items = data.data;
+                vm.items = data.data;
             }
             
             function reject(data, status, header, config) {

@@ -5,3 +5,6 @@ class DriverSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Driver
         fields = ('name', 'age', 'profile')
+        
+        def create(self, validated_data):
+            return Driver.objects.create(**validated_data)
