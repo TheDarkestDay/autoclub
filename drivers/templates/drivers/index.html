@@ -8,10 +8,13 @@
         <script src="{% static "scripts/angular.min.js" %}"></script>
         <script src="{% static "scripts/angular-route.min.js" %}"></script>
         <script src="{% static "scripts/app.js" %}"></script>
-        <script src="{% static "scripts/controllers.js" %}"></script>
+        <script src="{% static "scripts/controllers/driver-list-controller.js" %}"></script>
+        <script src="{% static "scripts/services/autoclub-services.js"%}"></script>
     </head>
     <body>
-        <div ng-view>
+        <div class="container">
+            <div ng-view>
+            </div>
         </div>
     </body>
 </html>
