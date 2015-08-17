@@ -19,7 +19,9 @@
         
         function create(content) {
             return $http.post('http://autoclub-thedarkestday.c9.io/api/drivers/', {
-                content: content
+                name: content.name,
+                age: content.age,
+                profile: content.profile
             });
         }
     }

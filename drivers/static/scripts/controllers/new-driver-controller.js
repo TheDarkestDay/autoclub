@@ -5,7 +5,7 @@
     
     newDriverController.$inject = ['Drivers'];
     
-    function newDriverController() {
+    function newDriverController(Drivers) {
         
         var vm = this;
         
