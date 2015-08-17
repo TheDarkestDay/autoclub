@@ -6,7 +6,7 @@
     config.$inject = ['$routeProvider'];
     
     function config($routeProvider) {
-        $routeProvider.when('/home',{
+        $routeProvider.when('/',{
            templateUrl: 'static/views/home.html',
            controller: 'driverListController',
            controllerAs: 'vm'

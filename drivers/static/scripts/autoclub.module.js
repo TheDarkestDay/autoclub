@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     
-    angular.module('autoclubApp', ['autoclubControllers', 'autoclubRoutes']);
+    angular.module('autoclubApp', ['autoclubControllers', 'autoclubRoutes', 'ngDialog']);
     
     angular.module('autoclubServices',[]);
     

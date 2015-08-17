@@ -4,14 +4,17 @@
     <head>
         <meta charset="utf-8"></meta>
         <title> Driver's db </title>
-        <link rel="stylesheet" href="{% static "styles/dist/css/bootstrap.min.css" %}">
+  {% comment %}      <link rel="stylesheet" href="{% static "styles/dist/css/bootstrap.min.css" %}"> {% endcomment %}
         <link rel="stylesheet" href="{% static "styles/style.css" %}">
+        <link rel="stylesheet" href="{% static "styles/ngDialog.min.css"%}">
         <script src="{% static "scripts/angular.min.js" %}"></script>
         <script src="{% static "scripts/angular-route.min.js" %}"></script>
         <script src="{% static "scripts/autoclub.module.js" %}"></script>
         <script src="{% static "scripts/autoclub.routes.js"%}"></script>
+        <script src="{% static "scripts/ngDialog.min.js"%}"></script>
         <script src="{% static "scripts/controllers/drivers-list-controller.js" %}"></script>
         <script src="{% static "scripts/services/autoclub-services.js"%}"></script>
+        <script src="{% static "scripts/controllers/new-driver-controller.js"%}"></script>
     </head>
     <body>
         <div class="container">
