@@ -14,6 +14,10 @@
             templateUrl: 'static/views/driver.html',
             controller: 'driverController',
             controllerAs: 'vm'
+        }).when('/edit_driver/:driverId', {
+            templateUrl: 'static/views/edit_driver.html',
+            controller: 'editDriverController',
+            controllerAs: 'vm'
         });
     }
 })();

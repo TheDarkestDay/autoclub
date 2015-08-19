@@ -9,7 +9,9 @@
         var Drivers = {
             all: all,
             create: create,
-            get: get
+            get: get,
+            update: update,
+            destroy: destroy
         };
         
         return Drivers;
@@ -20,6 +22,14 @@
         
         function get(id) {
             return $http.get('http://autoclub-thedarkestday.c9.io/api/drivers/'+id+'/');
+        }
+        
+        function update(content) {
+            return $http.put('http://autoclub-thedarkestday.c9.io/api/drivers/'+content.id+'/', content);
+        }
+        
+        function destroy(id) {
+            return $http.delete('http://autoclub-thedarkestday.c9.io/api/drivers/'+id+'/');
         }
         
         function create(content) {
