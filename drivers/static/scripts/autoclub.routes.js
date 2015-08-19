@@ -10,7 +10,7 @@
            templateUrl: 'static/views/home.html',
            controller: 'driverListController',
            controllerAs: 'vm'
-        }).when('/drivers/:driverId/', {
+        }).when('/drivers/:driverId', {
             templateUrl: 'static/views/driver.html',
             controller: 'driverController',
             controllerAs: 'vm'

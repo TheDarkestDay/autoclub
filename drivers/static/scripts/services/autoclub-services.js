@@ -9,9 +9,7 @@
         var Drivers = {
             all: all,
             create: create,
-            get: get,
-            delete: delete,
-            update: update
+            get: get
         };
         
         return Drivers;

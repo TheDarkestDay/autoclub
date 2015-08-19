@@ -8,7 +8,7 @@
     function driverController($routeParams, Drivers) {
         var vm = this;
         
-        var driver_id = $routeParams.driverid;
+        var driver_id = $routeParams.driverId;
         
         Drivers.get(driver_id).then(resolve, reject);
         
