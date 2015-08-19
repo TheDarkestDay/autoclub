@@ -8,13 +8,20 @@
         
         var Drivers = {
             all: all,
-            create: create
+            create: create,
+            get: get,
+            delete: delete,
+            update: update
         };
         
         return Drivers;
         
         function all() {
             return $http.get('http://autoclub-thedarkestday.c9.io/api/drivers/');
+        }
+        
+        function get(id) {
+            return $http.get('http://autoclub-thedarkestday.c9.io/api/drivers/'+id+'/');
         }
         
         function create(content) {

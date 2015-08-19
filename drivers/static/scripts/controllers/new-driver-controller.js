@@ -3,9 +3,9 @@
     
     angular.module('autoclubControllers').controller('newDriverController', newDriverController);
     
-    newDriverController.$inject = ['Drivers'];
+    newDriverController.$inject = ['Drivers', '$scope', '$location'];
     
-    function newDriverController(Drivers) {
+    function newDriverController(Drivers, $scope, $location) {
         
         var vm = this;
         
@@ -19,6 +19,8 @@
             };
             
             Drivers.create(content).then(resolve,reject);
+            
+            $scope.closeThisDialog();
             
             function resolve(data, status, headers, config) {
                 console.log('OK');

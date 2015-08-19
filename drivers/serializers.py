@@ -4,7 +4,6 @@ from rest_framework import serializers
 class DriverSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Driver
-        fields = ('name', 'age', 'profile')
+        fields = ('id','name', 'age', 'profile')
+        read_only_fields = ('id')
         
-        def create(self, validated_data):
-            return Driver.objects.create(**validated_data)

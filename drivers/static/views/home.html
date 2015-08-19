@@ -1,17 +1,17 @@
 <div class="row">
     <div class="col-md-4 col-lg-4" ng-repeat="item in vm.items">
         <div class="thumbnail">
-            <img src="http://placekitten.com/g/200/300" />
+            <img src="http://lorempixel.com/250/200/cats" />
             <div class="caption">
                 <h3>
                     {{item.name}}
                 </h3>
                 <h4>
-                    {{item.age}}
+                    {{item.age}} years
                 </h4>
-                <p>
-                    {{item.profile}}
-                </p>
+                <a class="btn btn-success" href="/drivers/{{item.id}}">
+                    Details
+                </a>
             </div>
         </div>
     </div>
