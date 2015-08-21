@@ -24,6 +24,7 @@
             
             function resolve(data, status, headers, config) {
                 console.log('OK');
+                window.location = '/';
             }
             
             function reject(data, status, headers, config) {

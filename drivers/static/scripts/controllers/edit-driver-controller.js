@@ -11,6 +11,17 @@
         
         vm.submit = submit;
         
+        Drivers.get(driver_id).then(resolve, reject);
+        
+        function resolve(data, status, headers, config) {
+            vm.name = data.data.name;
+            vm.age = data.data.age;
+            vm.bio = data.data.profile;
+        }
+        
+        function reject(data, status, header, config) {
+            console.log(data.error);
+        }
         
         function submit() {
             var content = {
@@ -24,6 +35,7 @@
             
             function resolve(data, status, header, config) {
                 console.log('Updated');
+                window.location = '/';
             }
             
             function reject(data, status, header, config) {
