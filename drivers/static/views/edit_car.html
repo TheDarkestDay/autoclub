@@ -1,0 +1,15 @@
+<form ng-submit="vm.submit()">
+    <div class="form-group">
+        <label for="name"> Model </label>
+        <input type="text" id="name" ng-model="vm.model_name">
+    </div>
+    <div class="form-group">
+        <label for="owner">Owner</label>
+        <select id="owner" ng-model="vm.owner">
+            <option ng-repeat="driver in vm.drivers" value="{{driver.id}}">
+                {{driver.name}}
+            </option>
+        </select>
+    </div>
+    <input type="submit">
+</form>
