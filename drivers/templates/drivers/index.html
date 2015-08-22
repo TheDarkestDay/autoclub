@@ -18,6 +18,8 @@
         <script src="{% static "scripts/controllers/new-driver-controller.js"%}"></script>
         <script src="{% static "scripts/controllers/driver-controller.js"%}"></script>
         <script src="{% static "scripts/controllers/edit-driver-controller.js"%}"></script>
+        <script src="{% static "scripts/controllers/new-car-controller.js"%}"></script>
+        <script src="{% static "scripts/controllers/list-car-controller.js"%}"></script>
         <script src="{% static "scripts/services/car-service.js"%}"></script>
     </head>
     <body>
@@ -25,6 +27,18 @@
             <header class="page--header">
                The Driver's Db On-Line 
             </header>
+            <ul class="nav nav-tabs nav-justified">
+                <li>
+                  <a href="#/drivers">
+                     Drivers 
+                  </a>   
+                </li>
+                <li>
+                  <a href="#/cars">
+                     Cars 
+                  </a>  
+                </li>
+            </ul>
             <div ng-view>
             </div>
         </div>
