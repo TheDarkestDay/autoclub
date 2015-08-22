@@ -25,10 +25,7 @@
       }
       
       function create(content) {
-          return $http.post('http://autoclub-thedarkestday.c9.io/api/cars/', {
-              model_name: content.model_name,
-              owner: content.owner
-          });
+          return $http.post('http://autoclub-thedarkestday.c9.io/api/cars/',content);
       }
       
       function update(content) {

@@ -4,8 +4,7 @@ from rest_framework import serializers
 class CarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Car
-        fields = {'id', 'model_name', 'owner'}
-        read_only_fields = ('id')
+        fields = ('id', 'model_name', 'owner')
 
 class DriverSerializer(serializers.ModelSerializer):
     cars = CarSerializer(many=True, read_only=True)

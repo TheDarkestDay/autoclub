@@ -18,6 +18,10 @@
             templateUrl: 'static/views/edit_driver.html',
             controller: 'editDriverController',
             controllerAs: 'vm'
+        }).when('/cars', {
+            templateUrl: 'static/views/cars_list.html',
+            controller: 'carListController',
+            controllerAs: 'vm'
         });
     }
 })();

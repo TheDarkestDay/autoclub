@@ -10,5 +10,5 @@ class Driver(models.Model):
     
 class Car(models.Model):
     model_name = models.CharField(max_length=20)
-    owner = models.ForeignKey(Driver)
+    owner = models.ForeignKey(Driver, related_name="cars")
     
