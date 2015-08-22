@@ -22,6 +22,14 @@
             templateUrl: 'static/views/cars_list.html',
             controller: 'carListController',
             controllerAs: 'vm'
+        }).when('/edit_car/:carId', {
+            templateUrl: 'static/views/edit_car.html',
+            controller: 'editCarController',
+            controllerAs: 'vm'
+        }).when('/cars/:carId', {
+            templateUrl: 'static/views/car.html',
+            controller: 'carController',
+            controllerAs: 'vm'
         });
     }
 })();

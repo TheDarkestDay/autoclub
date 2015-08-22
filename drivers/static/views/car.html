@@ -1,0 +1,12 @@
+<div>
+    <h1>
+        {{vm.data.model_name}}
+    </h1>
+    <img src="http://lorempixel.com/250/200/transport">
+    <h3>
+        Owned by <a ng-href="#/drivers/{{vm.data.owner}}"> {{vm.driver_name}} </a>
+    </h3>
+    <a class="btn btn-danger" ng-click="vm.destroy()">
+        Delete
+    </a>
+</div>
