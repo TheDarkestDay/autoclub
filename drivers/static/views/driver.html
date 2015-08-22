@@ -9,10 +9,32 @@
     <a href="" class="btn btn-danger" ng-click="vm.destroy()">
         Delete
     </a>
-    <h2>
-        {{vm.data.name}}'s cars:
-    </h2>
-    <div class="row">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            {{vm.data.name}}'s cars:
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4 col-lg-4" ng-repeat="car in vm.data.cars">
+                    <div class="thumbnail">
+                        <img src="http://lorempixel.com/250/200/transport">
+                        <div class="caption">
+                            <h3>
+                                {{car.model_name}}
+                            </h3>
+                            <a class="btn btn-success" ng-href="#/cars/{{car.id}}/">
+                              Details
+                            </a>
+                            <a class="btn btn-info" ng-href="#/edit_car/{{car.id}}/">
+                              Edit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--    <div class="row">
       <div class="col-md-4 col-lg-4" ng-repeat="car in vm.data.cars">
           <div class="thumbnail">
               <img src="http://lorempixel.com/250/200/transport" />
@@ -30,4 +52,4 @@
           </div>
       </div>
   </div>
-</div>
+</div> -->
