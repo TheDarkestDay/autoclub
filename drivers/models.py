@@ -8,3 +8,7 @@ class Driver(models.Model):
     registration_date = models.DateTimeField(default=timezone.now)
     profile = models.CharField(max_length=200)
     
+class Car(models.Model):
+    model_name = models.CharField(max_length=20)
+    owner = models.ForeignKey(Driver)
+    

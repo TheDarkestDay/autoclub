@@ -5,6 +5,7 @@ from drivers import views
 
 router = routers.DefaultRouter()
 router.register(r'drivers', views.DriverViewSet)
+router.register(r'cars', views.CarViewSet)
 
 urlpatterns = [
     url(r'^api/',include(router.urls)),
