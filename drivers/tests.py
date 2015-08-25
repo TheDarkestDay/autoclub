@@ -13,13 +13,13 @@ class AutoclubTestCase(test.APITestCase):
         self.car_id = Car.objects.get().id
     
     def test_can_create_driver(self):
-        new_driver = Driver.objects.get()
+        new_driver = Driver.objects.get(id=self.driver_id)
         self.assertEqual(new_driver.name,'Marina')
         self.assertEqual(new_driver.age, 28)
         self.assertEqual(new_driver.profile,'The last woman in the world')
         
     def test_can_delete_driver(self):
-        single_driver = Driver.objects.get()
+        single_driver = Driver.objects.get(id=self.driver_id)
         current_count = Driver.objects.all().count()
         self.client.delete('/api/drivers/%d/'%self.driver_id)
         new_count = Driver.objects.all().count()
@@ -29,12 +29,12 @@ class AutoclubTestCase(test.APITestCase):
         
     def test_can_update_driver(self):
         self.client.put('/api/drivers/%d/'%self.driver_id, {'name':'Katerina', 'age': 28, 'profile': 'The last woman in the world'})
-        updated_driver = Driver.objects.get()
+        updated_driver = Driver.objects.get(id=self.driver_id)
         self.assertEqual(updated_driver.name,'Katerina')
         
     def test_can_create_car(self):
-        car = Car.objects.get()
-        driver = Driver.objects.get()
+        car = Car.objects.get(id=self.car_id)
+        driver = Driver.objects.get(id=self.driver_id)
         self.assertEqual(car.model_name,'Jiguli')
         self.assertEqual(car.owner,driver)
         
@@ -43,11 +43,11 @@ class AutoclubTestCase(test.APITestCase):
         self.client.delete('/api/cars/%d/'%self.car_id)
         new_count = Car.objects.all().count()
         self.assertEqual(prev_count-new_count,1)
-        self.assertEqual(Car.objects.filter(model_name="Jiguli",owner=Driver.objects.get).exists(), False)
+        self.assertEqual(Car.objects.filter(model_name="Jiguli",owner=Driver.objects.get(id=self.driver_id)).exists(), False)
         
     def test_can_update_car(self):
         prev_count = Car.objects.all().count()
-        single_driver = Driver.objects.get()
+        single_driver = Driver.objects.get(id=self.driver_id)
         self.client.put('/api/cars/%d/'%self.car_id,{'model_name': 'Mercedez', 'owner': self.driver_id })
         new_count = Car.objects.all().count()
         self.assertEqual(new_count,prev_count)
