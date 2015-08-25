@@ -13,20 +13,38 @@ class AutoclubTestCase(test.APITestCase):
         self.car_id = Car.objects.get().id
     
     def test_can_create_driver(self):
-        current_count = Driver.objects.all().count()
         new_driver = Driver.objects.get()
         self.assertEqual(new_driver.name,'Marina')
         self.assertEqual(new_driver.age, 28)
         self.assertEqual(new_driver.profile,'The last woman in the world')
         
     def test_can_delete_driver(self):
+        single_driver = Driver.objects.get()
         current_count = Driver.objects.all().count()
         self.client.delete('/api/drivers/%d/'%self.driver_id)
         new_count = Driver.objects.all().count()
         self.assertEqual(current_count-new_count,1)
+        queryset = Car.objects.filter(owner=single_driver)
+        self.assertEqual(queryset.count(), 0)
         
     def test_can_update_driver(self):
         self.client.put('/api/drivers/%d/'%self.driver_id, {'name':'Katerina', 'age': 28, 'profile': 'The last woman in the world'})
         updated_driver = Driver.objects.get()
         self.assertEqual(updated_driver.name,'Katerina')
+        
+    def test_can_create_car(self):
+        car = Car.objects.get()
+        driver = Driver.objects.get()
+        self.assertEqual(car.model_name,'Jiguli')
+        self.assertEqual(car.owner,driver)
+        
+    def test_can_delete_car(self):
+        prev_count = Car.objects.all().count()
+        self.client.delete('/api/cars/%d/'%self.car_id)
+        new_count = Car.objects.all().count()
+        self.assertEqual(prev_count-new_count,1)
+        self.assertEqual(Car.objects.filter(model_name="Jiguli",owner=Driver.objects.get).exists(), False)
+        
+        
+    
         
