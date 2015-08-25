@@ -45,6 +45,13 @@ class AutoclubTestCase(test.APITestCase):
         self.assertEqual(prev_count-new_count,1)
         self.assertEqual(Car.objects.filter(model_name="Jiguli",owner=Driver.objects.get).exists(), False)
         
-        
+    def test_can_update_car(self):
+        prev_count = Car.objects.all().count()
+        single_driver = Driver.objects.get()
+        self.client.put('/api/cars/%d/'%self.car_id,{'model_name': 'Mercedez', 'owner': self.driver_id })
+        new_count = Car.objects.all().count()
+        self.assertEqual(new_count,prev_count)
+        car = Car.objects.get(id=self.car_id)
+        self.assertEqual(car.model_name,'Mercedez')
     
         
